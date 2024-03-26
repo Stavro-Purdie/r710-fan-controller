@@ -3,4 +3,4 @@
 
 - ## ADD MORE THRESHOLDS
 - ## REMOVE SAFEGUARDS
-- Write an average system, Takes two numbers per Threshold (min, max) and 
+- Write an average system, Takes two numbers per Threshold (min, max) and uses those to create a fan curve per threshold (like a graph).

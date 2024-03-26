@@ -1,5 +1,5 @@
 # Dell R710 Fan Control Script
-## This is a clone of nmaggioni/r710-fan-controller aimed at attempting to create a near liniar fan curve function for his script
+## This is a clone of nmaggioni/r710-fan-controller aimed at attempting to create a near linear fan curve function for his script
 > A temperature-based fan speed controller for Dell servers (tested on an R710, should work with most PowerEdges). Supports both local and remote hosts.
 
 
