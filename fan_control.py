@@ -84,7 +84,7 @@ def set_fan_speed(threshold_n, host):
         ipmitool("raw 0x30 0x30 0x02 0xff {}".format(wanted_percentage_hex), host)
         state[host['name']]['fan_speed'] = wanted_percentage
 
-
+## this is the error part of the initialization part of the script. 
 def parse_config():
     global config
     _debug = config['general']['debug']
@@ -113,10 +113,11 @@ def parse_config():
         for host in config['hosts']:
             if 'hysteresis' not in list(host.keys()):
                 host['hysteresis'] = 0
-            if len(host['temperatures']) != 3:
-                raise ConfigError('Host "{}" has {} temperature thresholds instead of 3.'.format(host['name'], len(host['temperatures'])))
-            if len(host['speeds']) != 3:
-                raise ConfigError('Host "{}" has {} fan speeds instead of 3.'.format(host['name'], len(host['speeds'])))
+            ## The code below needs to be commented/removed for my purposes as of now as the system will need more than 3 temperature thresholds
+            #if len(host['temperatures']) != 3:
+            #    raise ConfigError('Host "{}" has {} temperature thresholds instead of 3.'.format(host['name'], len(host['temperatures'])))
+            #if len(host['speeds']) != 3:
+            #    raise ConfigError('Host "{}" has {} fan speeds instead of 3.'.format(host['name'], len(host['speeds'])))
             if ('remote_temperature_command' in list(host.keys()) or 'remote_ipmi_credentials' in list(host.keys())) and \
                     ('remote_temperature_command' not in list(host.keys()) or 'remote_ipmi_credentials' not in list(host.keys())):
                 raise ConfigError('Host "{}" must specify either none or both "remote_temperature_command" and "remote_ipmi_credentials" keys.'.format(host['name']))

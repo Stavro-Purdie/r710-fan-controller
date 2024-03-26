@@ -1,5 +1,5 @@
 # Dell R710 Fan Control Script
-
+## This is a clone of nmaggioni/r710-fan-controller aimed at attempting to create a near liniar fan curve function for his script
 > A temperature-based fan speed controller for Dell servers (tested on an R710, should work with most PowerEdges). Supports both local and remote hosts.
 
 
@@ -84,6 +84,7 @@ Remote hosts must also contain both the `remote_temperature_command` string and 
 | `hosts`_[n]_.`remote_ipmi_credentials`.`password` | **For remote hosts only.** The password used to login to this remote system's iDRAC. _See [notes](#notes-on-remote-hosts) for details._ |
 
 ## How it works
+> This part of the documentation is inaccurate as the script *should* no longer work like this. I will update this in the near future.
 
 Every `general`.`interval` seconds the controller will fetch the temperatures of all the available CPU cores, average them and round the result (referred to as _Tavg_ below). It will then follow this logic to set the fans' speed percentage or engage automatic (hardware managed) control.
 
